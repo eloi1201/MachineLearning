@@ -1,5 +1,8 @@
 # Google Cloud Speech API
 
+The Google Cloud Speech API allows sending audio and receive a text transcription from the service.
+
+
 ### Add Google API KEY in environment variable.
 
 export API_KEY=<YOUR_API_KEY>
@@ -47,5 +50,3 @@ $ curl -s -X POST -H "Content-Type: application/json" --data-binary @request.jso
 
 * transcript : Exported strings from audio file through Google Cloud Speech API
 * confidence : Confidence score for the exported results
-
-

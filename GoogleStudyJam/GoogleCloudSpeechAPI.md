@@ -3,12 +3,12 @@
 The Google Cloud Speech API allows sending audio and receive a text transcription from the service.
 
 
-### Add Google API KEY in environment variable.
+### Create an API Key
 
 export API_KEY=<YOUR_API_KEY>
 
 
-### API request format
+### Create your Speech API request
 
 ```
 $ cat request.json
@@ -29,7 +29,7 @@ $ cat request.json
 * Supportive language : https://cloud.google.com/speech-to-text/docs/languages
 
 
-### Response data
+### Call the Speech API
 
 ```
 $ curl -s -X POST -H "Content-Type: application/json" --data-binary @request.json \

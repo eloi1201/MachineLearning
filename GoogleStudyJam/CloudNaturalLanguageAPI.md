@@ -23,7 +23,7 @@ export GOOGLE_APPLICATION_CREDENTIALS="/home/USER/key.json"
 ```
 
 
-### Make an Entity Analysis Request 1
+### Make an Entity Analysis Request 1 with gclouod command
 
 ```
 $ gcloud ml language analyze-entities --content="Michelangelo Caravaggio, Italian painter, is known for 'The Calling of Saint Matthew'."
@@ -96,6 +96,7 @@ $ gcloud ml language analyze-entities --content="Michelangelo Caravaggio, Italia
 ```
 
 ### Make an Entity Analysis Request 2
+
 ```
 $ cat request2.json
 {
@@ -255,6 +256,10 @@ curl "https://language.googleapis.com/v1/documents:analyzeEntities?key=${API_KEY
   "language": "en"
 }
 ```
+* name: Entity name
+* metadata: It would be contained if there is relavat information in wiki.
+* salience: The importance score of the entity in whole text
+
 
 ### Sentiment analysis with the Natural Language API
 
@@ -302,9 +307,8 @@ $ curl "https://language.googleapis.com/v1/documents:analyzeSentiment?key=${API_
   ]
 }
 ```
-
-score - is a number from -1.0 to 1.0 indicating how positive or negative the statement is.
-magnitude - is a number ranging from 0 to infinity that represents the weight of sentiment expressed in the statement, regardless of being positive or negative.
+* score - is a number from -1.0 to 1.0 indicating how positive or negative the statement is.
+* magnitude - is a number ranging from 0 to infinity that represents the weight of sentiment expressed in the statement, regardless of being positive or negative.
 
 ### Analyzing entity sentiment
 ```
@@ -373,6 +377,8 @@ $ curl "https://language.googleapis.com/v1/documents:analyzeEntitySentiment?key=
   "language": "en"
 }          
 ```
+
+
 
 ### Analyzing syntax and parts of speech
 

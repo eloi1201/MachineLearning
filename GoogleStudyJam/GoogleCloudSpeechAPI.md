@@ -29,7 +29,7 @@ $ cat request.json
 * Supportive language : https://cloud.google.com/speech-to-text/docs/languages
 
 
-### Call the Speech API
+### Call the Speech API - For english
 
 ```
 $ curl -s -X POST -H "Content-Type: application/json" --data-binary @request.json "https://speech.googleapis.com/v1beta1/speech:syncrecognize?key=${API_KEY}"
@@ -49,3 +49,37 @@ $ curl -s -X POST -H "Content-Type: application/json" --data-binary @request.jso
 
 * transcript : Exported strings from audio file through Google Cloud Speech API
 * confidence : Confidence score for the exported results
+
+
+### Call the Speech API - For french
+
+```
+$ cat request.json
+{
+  "config": {
+      "encoding":"FLAC",
+      "languageCode": "fr"
+  },
+  "audio": {
+      "uri":"gs://speech-language-samples/fr-sample.flac"
+  }
+}
+```
+
+```
+$ curl -s -X POST -H "Content-Type: application/json" --data-binary @request.json \
+> "https://speech.googleapis.com/v1/speech:recognize?key=${API_KEY}"
+
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "transcript": "maître corbeau sur un arbre perché tenait en son bec un fromage",
+          "confidence": 0.96079475
+        }
+      ]
+    }
+  ]
+}
+```
